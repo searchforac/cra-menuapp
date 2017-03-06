@@ -1,0 +1,37 @@
+.RestaurantDetail-image {
+	width: 100%;
+}
+
+.RestaurantDetail-title-container {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	background-color: #64ff96;
+}
+
+.RestaurantDetail-content-container {
+	padding: 25px;
+	display: flex;
+	height: 80vh;
+	align-items: center;
+}
+
+.RestaurantDetail-center-text {
+	display: inline-block;
+	color: white;
+	margin: 0 auto;
+}
+
+.RestaurantDetail-container {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-color: #f2f2f2;
+	border: 1px solid #dddddd;
+	margin-bottom: 10px;
+}
+
+.RestaurantDetail-item, .RestaurantDetail-dishName {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
