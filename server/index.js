@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const cors = require('cors')
+const cors = require('cors');
+const axios = require('axios');
 
 const Restaurant = require('./models/restaurant')
 
@@ -33,6 +34,17 @@ mongoose.connection
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
 // Routes
+app.get('/api/restaurants', (req, res) => {
+	const latitude = req.query.latitude;
+	const longitude = req.query.longitude;
+	axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=250&type=restaurant&key=AIzaSyDQBs0qp5XSjzDNzcvhEqmbCeNMzbqWCuM`)
+		.then((response) => {
+			console.log(response)
+			res.send(response.data.results)
+		}
+)
+})
+
 app.post('/api/create', (req, res) => {
 	console.log(req.body)
 	const place_id = req.body.place_id;

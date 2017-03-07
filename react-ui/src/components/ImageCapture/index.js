@@ -57,7 +57,7 @@ export default class ImageCapture extends Component {
   		}
 
   		if (response.body.secure_url !== '') {
-  			let submitData = request.post(`${process.env.REACT_APP_ROOT_URL}/api/create`)
+  			let submitData = request.post(`/api/create`)
   				.send({
   					image: response.body.secure_url,
   					dishName: that.state.dish,

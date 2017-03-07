@@ -23,7 +23,7 @@ export default class KitchenDetail extends Component {
 	}
 
 	componentWillMount() {
-		axios.get(`http://localhost:9000/api/restaurant/${this.props.params.id}`)    
+		axios.get(`${process.env.PORT}/api/restaurant/${this.props.params.id}`)    
       .then(response => {
       	if (response.data === "") {
       		this.setState({

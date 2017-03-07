@@ -32,14 +32,36 @@ export default class GeoLocator extends Component {
 
     // Arrow function sets 'this' to outer function's 'this'.  
     const foundPosition = (position) => {
-      console.log(position.coords)
-      axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${position.coords.latitude},${position.coords.longitude}&radius=250&type=restaurant&key=AIzaSyBrdvbUnuXITNngceAYtSkS1cmHuF0aD4M`)    
+        axios.get(`/api/restaurants`, {
+        params: {
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        }
+      })
       .then(response => {
-        console.log(response.data.results)
         this.setState({
-          restaurants: response.data.results
-        });
-      });
+          restaurants: response.data
+        })
+      })
+
+      // const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${position.coords.latitude},${position.coords.longitude}&radius=250&type=restaurant&key=${process.env.REACT_APP_GPLACES_KEY}`
+
+      // let xhr = new XMLHttpRequest();
+      // xhr.open('get', url);
+      // xhr.onload = function() {
+      //   this.setState({
+      //     restaurants: xhr.response.data.results
+      //   })
+      // }
+      // xhr.send()
+      // console.log(position.coords)
+      // axios.get(url)    
+      // .then(response => {
+      //   console.log(response.data.results)
+      //   this.setState({
+      //     restaurants: response.data.results
+      //   });
+      // });
     };
 
     const checkLocation = (position) => {
