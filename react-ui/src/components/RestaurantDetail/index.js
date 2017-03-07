@@ -23,7 +23,7 @@ export default class KitchenDetail extends Component {
 	}
 
 	componentWillMount() {
-		axios.get(`${process.env.PORT}/api/restaurant/${this.props.params.id}`)    
+		axios.get(`/api/restaurant/${this.props.params.id}`)    
       .then(response => {
       	if (response.data === "") {
       		this.setState({
@@ -61,7 +61,7 @@ export default class KitchenDetail extends Component {
 					<div className='RestaurantDetail-content-container'>
 						<div>
 							<p>There are no photos for this restaurant yet. 
-							Be hero NYC needs and add a photo!</p>
+							Add a photo!</p>
 							<ImageCapture place_id={this.props.params.id} name={this.props.params.name} refresh={this.refreshPage} />
 						</div>
 					</div>
@@ -71,8 +71,8 @@ export default class KitchenDetail extends Component {
 
 		return (
 			<div>		
-				<ImageCapture place_id={this.props.params.id} name={this.props.params.name} refresh={this.refreshPage} />
 				{this.state.showDishes && this.showDishes()}
+				<ImageCapture place_id={this.props.params.id} name={this.props.params.name} refresh={this.refreshPage} />
 			</div>		
 		);
 	}

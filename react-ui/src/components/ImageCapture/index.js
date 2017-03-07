@@ -102,7 +102,7 @@ export default class ImageCapture extends Component {
 								accept='image/*' 
 								capture='camera' 
 							/> 	
-							<label className='ImageCaptureLabel btn btn-primary' htmlFor='file'><Glyphicon glyph='camera' /></label>
+							<label className='ImageCaptureLabel' htmlFor='file'><Glyphicon glyph='camera' /></label>
 						</div>
 					}
 					
