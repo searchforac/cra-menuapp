@@ -53,7 +53,7 @@ export default class ImageCapture extends Component {
 			.field('file', this.img);
   	uploadImage.end((err, response) => {
   		if (err) {
-  			console.error(err);
+  			alert(err);
   		}
 
   		if (response.body.secure_url !== '') {
@@ -102,7 +102,7 @@ export default class ImageCapture extends Component {
 								accept='image/*' 
 								capture='camera' 
 							/> 	
-							<label className='ImageCaptureLabel' htmlFor='file'><Glyphicon glyph='camera' /></label>
+							<label className='ImageCaptureLabel btn btn-primary' htmlFor='file'><Glyphicon glyph='camera' /></label>
 						</div>
 					}
 					

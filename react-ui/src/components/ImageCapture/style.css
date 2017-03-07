@@ -17,9 +17,9 @@
 }
 
 .ImageCaptureLabel {
-	background-color: gray;
+	background-color: black;
 	color: white;
-	font-size: 35px;
+	font-size: 30px;
 	text-align: center;
 	position: fixed; 
 	bottom: 0px;
