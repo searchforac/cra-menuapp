@@ -47,7 +47,7 @@ export default class ImageCapture extends Component {
 
   submitForm() {
   	var that = this;
-  	console.log(that)
+  	console.log(process.env.REACT_APP_CLOUDINARY_UPLOAD_URL)
   	let uploadImage = request.post(process.env.REACT_APP_CLOUDINARY_UPLOAD_URL)
 			.field('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET)
 			.field('file', this.img);
